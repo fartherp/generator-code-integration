@@ -17,6 +17,7 @@
         <module>generatorcode-pos</module>
         <module>generatorcode-ppms</module>
         <module>generatorcode-plt</module>
+        <module>generatorcode-operationplatform</module>
     </modules>
 
     <properties>
