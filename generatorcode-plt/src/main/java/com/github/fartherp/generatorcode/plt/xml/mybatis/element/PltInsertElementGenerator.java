@@ -33,7 +33,7 @@ public class PltInsertElementGenerator extends AbstractXmlElementGenerator<PltAt
         if (tableInfoWrapper.getPrimaryKeyColumns().size() > 1) {
             keyProperty = "hashmap";
         } else {
-            keyProperty = tableInfoWrapper.getPrimaryKeyColumns().get(0).getActualColumnName();
+            keyProperty = tableInfoWrapper.getPrimaryKeyColumns().get(0).getJavaProperty();
         }
         answer.addAttribute(new Attribute("useGeneratedKeys", "true"));
         answer.addAttribute(new Attribute("keyProperty", keyProperty));
