@@ -29,6 +29,7 @@ public class PltGenerator extends MyBatisGenerator<PltAttributes> {
     }
 
     public String dealTableName(String tableName) {
+        tableName = tableName.toLowerCase();
         if (tableName.indexOf("tb_") == 0) {
             tableName = tableName.replaceFirst("tb_", "");
         } else if (tableName.indexOf("td_") == 0) {
@@ -47,6 +48,7 @@ public class PltGenerator extends MyBatisGenerator<PltAttributes> {
 
     @Override
     public String dealColumnName(String columnName) {
+        columnName = columnName.toLowerCase();
         if (columnName.indexOf("n_") == 0) {
             columnName = columnName.replaceFirst("n_", "");
         } else if (columnName.indexOf("c_") == 0) {
