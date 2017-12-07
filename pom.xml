@@ -18,6 +18,7 @@
         <module>generatorcode-ppms</module>
         <module>generatorcode-plt</module>
         <module>generatorcode-operationplatform</module>
+        <module>generatorcode-openservice</module>
     </modules>
 
     <properties>
