@@ -29,9 +29,5 @@
             <groupId>com.github.fartherp</groupId>
             <artifactId>code-generator-core</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.fartherp</groupId>
-            <artifactId>framework-core</artifactId>
-        </dependency>
     </dependencies>
 </project>
