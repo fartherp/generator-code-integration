@@ -33,12 +33,21 @@ public class OsBaseBoGenerator extends AbstractJavaElementGenerator<OsAttributes
 
     public void dealElement(TopLevelClass topLevelClass) {
         List<ColumnInfo> columnInfos = getColumnsInThisClass();
+        List<ColumnInfo> columnInfoList = tableInfoWrapper.getPrimaryKeyColumns();
 
         for (ColumnInfo columnInfo : columnInfos) {
             /** 字段属性 */
             Field field = JavaBeansUtils.getJavaBeansField(columnInfo, tableInfoWrapper);
             topLevelClass.addField(field);
             topLevelClass.addImportedType(field.getType());
+
+            /** 主键@Id注解 */
+            for (ColumnInfo c : columnInfoList) {
+                if (columnInfo.getActualColumnName().equals(c.getActualColumnName())) {
+                    field.addAnnotation("@Id");
+                    break;
+                }
+            }
 
             /** get方法 */
             Method method = JavaBeansUtils.getJavaBeansGetter(columnInfo, tableInfoWrapper);
