@@ -115,7 +115,10 @@
                 </plugins>
                 <resources>
                     <resource>
-                        <directory>${profiles.dir}/dev</directory>
+                        <directory>src/main/java</directory>
+                        <includes>
+                            <include>**/*.properties</include>
+                        </includes>
                     </resource>
                     <resource>
                         <directory>src/main/resources</directory>
@@ -124,20 +127,7 @@
             </build>
         </profile>
         <profile>
-            <id>beta</id>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>${profiles.dir}/beta</directory>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                </resources>
-            </build>
-        </profile>
-        <profile>
-            <id>product</id>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>
@@ -211,7 +201,10 @@
                 </plugins>
                 <resources>
                     <resource>
-                        <directory>${profiles.dir}/product</directory>
+                        <directory>src/main/java</directory>
+                        <includes>
+                            <include>**/*.properties</include>
+                        </includes>
                     </resource>
                     <resource>
                         <directory>src/main/resources</directory>
