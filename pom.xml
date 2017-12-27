@@ -21,6 +21,10 @@
         <module>generatorcode-openservice</module>
     </modules>
 
+    <name>generator-code-integration</name>
+    <url>https://github.com/fartherp/generator-code-integration</url>
+    <description>generator-code-integration</description>
+
     <properties>
         <code-generator-core.version>1.0.0</code-generator-core.version>
         <farmework-version>1.0.9</farmework-version>
