@@ -7,12 +7,12 @@ package com.github.fartherp.generatorcode.pos.xml.spring.element;
 import com.github.fartherp.codegenerator.config.CodeGenContext;
 import com.github.fartherp.codegenerator.config.SpringXMLConstants;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.JavaTypeInfo;
 import com.github.fartherp.codegenerator.util.JavaBeansUtils;
 import com.github.fartherp.codegenerator.xml.Attribute;
 import com.github.fartherp.codegenerator.xml.XmlElement;
 import com.github.fartherp.codegenerator.xml.spring.element.AbstractSpringXMLElement;
 import com.github.fartherp.generatorcode.pos.db.PosAttributes;
+import com.github.fartherp.javacode.JavaTypeInfo;
 
 import java.util.List;
 

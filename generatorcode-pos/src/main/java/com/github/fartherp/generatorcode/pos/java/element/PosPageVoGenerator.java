@@ -5,10 +5,10 @@
 package com.github.fartherp.generatorcode.pos.java.element;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.JavaTypeInfo;
-import com.github.fartherp.codegenerator.java.TopLevelClass;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.generatorcode.pos.db.PosAttributes;
+import com.github.fartherp.javacode.JavaTypeInfo;
+import com.github.fartherp.javacode.TopLevelClass;
 
 /**
  * Created by IntelliJ IDEA .

@@ -5,7 +5,6 @@
 package com.github.fartherp.generatorcode.plt.java.file;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.CompilationUnit;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.java.file.AbstractJavaGenerator;
 import com.github.fartherp.generatorcode.plt.db.PltAttributes;
@@ -14,6 +13,7 @@ import com.github.fartherp.generatorcode.plt.java.element.PltManagerGenerator;
 import com.github.fartherp.generatorcode.plt.java.element.PltManagerImplGenerator;
 import com.github.fartherp.generatorcode.plt.java.element.PltMapperGenerator;
 import com.github.fartherp.generatorcode.plt.java.element.PltMapperImplGenerator;
+import com.github.fartherp.javacode.CompilationUnit;
 
 import java.util.List;
 

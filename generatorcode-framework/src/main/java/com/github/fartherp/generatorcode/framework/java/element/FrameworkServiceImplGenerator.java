@@ -5,15 +5,15 @@
 package com.github.fartherp.generatorcode.framework.java.element;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.Field;
-import com.github.fartherp.codegenerator.java.JavaKeywords;
-import com.github.fartherp.codegenerator.java.JavaTypeInfo;
 import com.github.fartherp.codegenerator.java.JavaTypeInfoEnum;
-import com.github.fartherp.codegenerator.java.Method;
-import com.github.fartherp.codegenerator.java.TopLevelClass;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.util.JavaBeansUtils;
 import com.github.fartherp.generatorcode.framework.db.FrameworkAttributes;
+import com.github.fartherp.javacode.Field;
+import com.github.fartherp.javacode.JavaKeywords;
+import com.github.fartherp.javacode.JavaTypeInfo;
+import com.github.fartherp.javacode.Method;
+import com.github.fartherp.javacode.TopLevelClass;
 
 import java.util.HashSet;
 

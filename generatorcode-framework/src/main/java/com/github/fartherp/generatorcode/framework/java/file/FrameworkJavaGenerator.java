@@ -5,7 +5,6 @@
 package com.github.fartherp.generatorcode.framework.java.file;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.CompilationUnit;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.java.file.AbstractJavaGenerator;
 import com.github.fartherp.generatorcode.framework.db.FrameworkAttributes;
@@ -16,6 +15,7 @@ import com.github.fartherp.generatorcode.framework.java.element.FrameworkExtends
 import com.github.fartherp.generatorcode.framework.java.element.FrameworkMapperGenerator;
 import com.github.fartherp.generatorcode.framework.java.element.FrameworkServiceGenerator;
 import com.github.fartherp.generatorcode.framework.java.element.FrameworkServiceImplGenerator;
+import com.github.fartherp.javacode.CompilationUnit;
 
 import java.util.List;
 

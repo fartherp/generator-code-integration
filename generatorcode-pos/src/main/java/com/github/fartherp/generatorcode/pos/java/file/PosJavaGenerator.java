@@ -5,7 +5,6 @@
 package com.github.fartherp.generatorcode.pos.java.file;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.CompilationUnit;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.java.file.AbstractJavaGenerator;
 import com.github.fartherp.generatorcode.pos.db.PosAttributes;
@@ -16,6 +15,7 @@ import com.github.fartherp.generatorcode.pos.java.element.PosPageVoGenerator;
 import com.github.fartherp.generatorcode.pos.java.element.PosServiceGenerator;
 import com.github.fartherp.generatorcode.pos.java.element.PosServiceImplGenerator;
 import com.github.fartherp.generatorcode.pos.java.element.PosVoGenerator;
+import com.github.fartherp.javacode.CompilationUnit;
 
 import java.util.List;
 

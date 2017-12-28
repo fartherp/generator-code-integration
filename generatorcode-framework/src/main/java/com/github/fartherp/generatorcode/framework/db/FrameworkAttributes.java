@@ -6,14 +6,14 @@ package com.github.fartherp.generatorcode.framework.db;
 
 import com.github.fartherp.codegenerator.db.AbstractAttributes;
 import com.github.fartherp.codegenerator.db.ColumnInfo;
-import com.github.fartherp.codegenerator.java.Field;
-import com.github.fartherp.codegenerator.java.JavaTypeInfo;
 import com.github.fartherp.codegenerator.util.JavaBeansUtils;
 import com.github.fartherp.framework.core.dao.ConfigurableBaseSqlMapDao;
 import com.github.fartherp.framework.core.dao.DaoMapper;
 import com.github.fartherp.framework.core.dao.SqlMapDao;
 import com.github.fartherp.framework.core.service.GenericService;
 import com.github.fartherp.framework.core.service.GenericSqlMapServiceImpl;
+import com.github.fartherp.javacode.Field;
+import com.github.fartherp.javacode.JavaTypeInfo;
 
 import java.util.List;
 

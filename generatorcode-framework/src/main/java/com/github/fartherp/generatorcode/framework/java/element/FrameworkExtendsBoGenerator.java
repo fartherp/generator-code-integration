@@ -5,9 +5,9 @@
 package com.github.fartherp.generatorcode.framework.java.element;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.TopLevelClass;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.generatorcode.framework.db.FrameworkAttributes;
+import com.github.fartherp.javacode.TopLevelClass;
 
 /**
  * 基础类

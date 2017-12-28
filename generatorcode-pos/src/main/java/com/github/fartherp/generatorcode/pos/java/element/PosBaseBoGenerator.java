@@ -6,13 +6,13 @@ package com.github.fartherp.generatorcode.pos.java.element;
 
 import com.github.fartherp.codegenerator.db.ColumnInfo;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.Field;
-import com.github.fartherp.codegenerator.java.JavaTypeInfo;
-import com.github.fartherp.codegenerator.java.Method;
-import com.github.fartherp.codegenerator.java.TopLevelClass;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.util.JavaBeansUtils;
 import com.github.fartherp.generatorcode.pos.db.PosAttributes;
+import com.github.fartherp.javacode.Field;
+import com.github.fartherp.javacode.JavaTypeInfo;
+import com.github.fartherp.javacode.Method;
+import com.github.fartherp.javacode.TopLevelClass;
 
 import java.util.List;
 

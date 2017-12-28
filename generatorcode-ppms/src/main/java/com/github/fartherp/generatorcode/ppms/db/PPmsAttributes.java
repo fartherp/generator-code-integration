@@ -5,7 +5,7 @@
 package com.github.fartherp.generatorcode.ppms.db;
 
 import com.github.fartherp.codegenerator.db.AbstractAttributes;
-import com.github.fartherp.codegenerator.java.JavaTypeInfo;
+import com.github.fartherp.javacode.JavaTypeInfo;
 
 /**
  * Created by IntelliJ IDEA .

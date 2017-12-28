@@ -5,7 +5,6 @@
 package com.github.fartherp.generatorcode.os.java.file;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.CompilationUnit;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.java.file.AbstractJavaGenerator;
 import com.github.fartherp.generatorcode.os.db.OsAttributes;
@@ -13,6 +12,7 @@ import com.github.fartherp.generatorcode.os.java.element.OsBaseBoGenerator;
 import com.github.fartherp.generatorcode.os.java.element.OsMapperGenerator;
 import com.github.fartherp.generatorcode.os.java.element.OsServiceGenerator;
 import com.github.fartherp.generatorcode.os.java.element.OsServiceImplGenerator;
+import com.github.fartherp.javacode.CompilationUnit;
 
 import java.util.List;
 

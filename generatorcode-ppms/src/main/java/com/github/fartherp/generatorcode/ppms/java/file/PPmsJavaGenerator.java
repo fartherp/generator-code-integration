@@ -5,7 +5,6 @@
 package com.github.fartherp.generatorcode.ppms.java.file;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.CompilationUnit;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.java.file.AbstractJavaGenerator;
 import com.github.fartherp.generatorcode.ppms.db.PPmsAttributes;
@@ -14,6 +13,7 @@ import com.github.fartherp.generatorcode.ppms.java.element.PPmsBaseBoGenerator;
 import com.github.fartherp.generatorcode.ppms.java.element.PPmsDaoGenerator;
 import com.github.fartherp.generatorcode.ppms.java.element.PPmsServiceGenerator;
 import com.github.fartherp.generatorcode.ppms.java.element.PPmsServiceImplGenerator;
+import com.github.fartherp.javacode.CompilationUnit;
 
 import java.util.List;
 

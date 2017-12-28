@@ -5,15 +5,15 @@
 package com.github.fartherp.generatorcode.ppms.java.element;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.java.JavaKeywords;
-import com.github.fartherp.codegenerator.java.JavaTypeInfo;
 import com.github.fartherp.codegenerator.java.JavaTypeInfoEnum;
-import com.github.fartherp.codegenerator.java.Method;
-import com.github.fartherp.codegenerator.java.Parameter;
-import com.github.fartherp.codegenerator.java.TopLevelClass;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.util.JavaBeansUtils;
 import com.github.fartherp.generatorcode.ppms.db.PPmsAttributes;
+import com.github.fartherp.javacode.JavaKeywords;
+import com.github.fartherp.javacode.JavaTypeInfo;
+import com.github.fartherp.javacode.Method;
+import com.github.fartherp.javacode.Parameter;
+import com.github.fartherp.javacode.TopLevelClass;
 
 /**
  * Created by IntelliJ IDEA.
