@@ -4,9 +4,9 @@
 
 package com.github.fartherp.generatorcode.framework.xml.mybatis.element;
 
-import com.github.fartherp.codegenerator.xml.TextElement;
 import com.github.fartherp.codegenerator.xml.mybatis.element.AbstractXmlElementGenerator;
 import com.github.fartherp.generatorcode.framework.db.FrameworkAttributes;
+import com.github.fartherp.javaxml.TextElement;
 
 /**
  * Created by IntelliJ IDEA.

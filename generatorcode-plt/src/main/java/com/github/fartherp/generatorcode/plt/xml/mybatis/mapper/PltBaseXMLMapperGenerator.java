@@ -4,7 +4,6 @@
 
 package com.github.fartherp.generatorcode.plt.xml.mybatis.mapper;
 
-import com.github.fartherp.codegenerator.xml.XmlElement;
 import com.github.fartherp.codegenerator.xml.mybatis.element.AbstractXmlElementGenerator;
 import com.github.fartherp.codegenerator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
 import com.github.fartherp.generatorcode.plt.db.PltAttributes;
@@ -16,6 +15,7 @@ import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltResultMapWit
 import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltSelectByPrimaryKeyElementGenerator;
 import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltUpdateByPrimaryKeySelectiveElementGenerator;
 import com.github.fartherp.generatorcode.plt.xml.mybatis.element.UpdateByPrimaryKeyElementGenerator;
+import com.github.fartherp.javaxml.XmlElement;
 
 /**
  * Base基础XML的MAPPER类

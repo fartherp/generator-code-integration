@@ -6,12 +6,12 @@ package com.github.fartherp.generatorcode.pos.xml.spring.docment;
 
 import com.github.fartherp.codegenerator.config.CodeGenContext;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.xml.Document;
 import com.github.fartherp.codegenerator.xml.spring.document.AbstractSpringXMLDocument;
 import com.github.fartherp.codegenerator.xml.spring.element.AbstractSpringXMLElement;
 import com.github.fartherp.generatorcode.pos.db.PosAttributes;
 import com.github.fartherp.generatorcode.pos.xml.spring.element.PosSpringActionXMLElement;
 import com.github.fartherp.generatorcode.pos.xml.spring.element.PosSpringServletXMLElement;
+import com.github.fartherp.javaxml.Document;
 
 import java.util.ArrayList;
 import java.util.List;

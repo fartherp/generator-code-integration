@@ -6,11 +6,11 @@ package com.github.fartherp.generatorcode.os.xml.mybatis.element;
 
 import com.github.fartherp.codegenerator.db.ColumnInfo;
 import com.github.fartherp.codegenerator.util.MyBatis3FormattingUtils;
-import com.github.fartherp.codegenerator.xml.Attribute;
-import com.github.fartherp.codegenerator.xml.TextElement;
-import com.github.fartherp.codegenerator.xml.XmlElement;
 import com.github.fartherp.codegenerator.xml.mybatis.element.AbstractXmlElementGenerator;
 import com.github.fartherp.generatorcode.os.db.OsAttributes;
+import com.github.fartherp.javaxml.Attribute;
+import com.github.fartherp.javaxml.TextElement;
+import com.github.fartherp.javaxml.XmlElement;
 
 /**
  * 添加部分字段,if-test

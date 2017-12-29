@@ -6,9 +6,9 @@ package com.github.fartherp.generatorcode.ppms.xml.mybatis.element;
 
 import com.github.fartherp.codegenerator.db.ColumnInfo;
 import com.github.fartherp.codegenerator.util.MyBatis3FormattingUtils;
-import com.github.fartherp.codegenerator.xml.TextElement;
 import com.github.fartherp.codegenerator.xml.mybatis.element.AbstractXmlElementGenerator;
 import com.github.fartherp.generatorcode.ppms.db.PPmsAttributes;
+import com.github.fartherp.javaxml.TextElement;
 
 /**
  * 删除语句（主键）

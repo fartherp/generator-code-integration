@@ -4,7 +4,6 @@
 
 package com.github.fartherp.generatorcode.ppms.xml.mybatis.mapper;
 
-import com.github.fartherp.codegenerator.xml.XmlElement;
 import com.github.fartherp.codegenerator.xml.mybatis.element.AbstractXmlElementGenerator;
 import com.github.fartherp.codegenerator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
 import com.github.fartherp.generatorcode.ppms.db.PPmsAttributes;
@@ -15,6 +14,7 @@ import com.github.fartherp.generatorcode.ppms.xml.mybatis.element.PpmsGetListEle
 import com.github.fartherp.generatorcode.ppms.xml.mybatis.element.PpmsInsertBatchElementGenerator;
 import com.github.fartherp.generatorcode.ppms.xml.mybatis.element.PpmsInsertElementGenerator;
 import com.github.fartherp.generatorcode.ppms.xml.mybatis.element.PpmsUpdateElementGenerator;
+import com.github.fartherp.javaxml.XmlElement;
 
 /**
  * Base基础XML的MAPPER类

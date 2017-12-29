@@ -6,10 +6,10 @@ package com.github.fartherp.generatorcode.plt.xml.mybatis.element;
 
 import com.github.fartherp.codegenerator.db.ColumnInfo;
 import com.github.fartherp.codegenerator.util.MyBatis3FormattingUtils;
-import com.github.fartherp.codegenerator.xml.Attribute;
-import com.github.fartherp.codegenerator.xml.XmlElement;
 import com.github.fartherp.codegenerator.xml.mybatis.element.AbstractXmlElementGenerator;
 import com.github.fartherp.generatorcode.plt.db.PltAttributes;
+import com.github.fartherp.javaxml.Attribute;
+import com.github.fartherp.javaxml.XmlElement;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.List;

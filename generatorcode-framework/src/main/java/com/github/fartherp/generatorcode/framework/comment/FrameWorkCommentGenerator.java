@@ -8,8 +8,6 @@ import com.github.fartherp.codegenerator.api.comment.DefaultCommentGenerator;
 import com.github.fartherp.codegenerator.config.MergeConstants;
 import com.github.fartherp.codegenerator.db.ColumnInfo;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.xml.TextElement;
-import com.github.fartherp.codegenerator.xml.XmlElement;
 import com.github.fartherp.framework.common.util.DateUtil;
 import com.github.fartherp.javacode.CompilationUnit;
 import com.github.fartherp.javacode.Field;
@@ -17,6 +15,8 @@ import com.github.fartherp.javacode.InnerClass;
 import com.github.fartherp.javacode.InnerEnum;
 import com.github.fartherp.javacode.Method;
 import com.github.fartherp.javacode.Parameter;
+import com.github.fartherp.javaxml.TextElement;
+import com.github.fartherp.javaxml.XmlElement;
 
 import java.util.Date;
 

@@ -8,11 +8,11 @@ import com.github.fartherp.codegenerator.api.MyBatisGenerator;
 import com.github.fartherp.codegenerator.api.file.GeneratedXmlFile;
 import com.github.fartherp.codegenerator.config.CodeGenContext;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.xml.Document;
 import com.github.fartherp.codegenerator.xml.spring.document.AbstractSpringXMLDocument;
 import com.github.fartherp.generatorcode.pos.db.PosAttributes;
 import com.github.fartherp.generatorcode.pos.db.PosTableMyBatis3Impl;
 import com.github.fartherp.generatorcode.pos.xml.spring.docment.PosSpringXMLDocument;
+import com.github.fartherp.javaxml.Document;
 
 import java.util.List;
 

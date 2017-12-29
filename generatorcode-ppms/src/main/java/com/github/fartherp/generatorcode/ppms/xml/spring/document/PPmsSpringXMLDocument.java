@@ -6,13 +6,13 @@ package com.github.fartherp.generatorcode.ppms.xml.spring.document;
 
 import com.github.fartherp.codegenerator.config.CodeGenContext;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.xml.Document;
 import com.github.fartherp.codegenerator.xml.spring.document.AbstractSpringXMLDocument;
 import com.github.fartherp.codegenerator.xml.spring.element.AbstractSpringXMLElement;
 import com.github.fartherp.generatorcode.ppms.db.PPmsAttributes;
 import com.github.fartherp.generatorcode.ppms.xml.spring.element.PPmsSpringActionXMLElement;
 import com.github.fartherp.generatorcode.ppms.xml.spring.element.PPmsSpringServletXMLElement;
 import com.github.fartherp.generatorcode.ppms.xml.spring.element.PPmsSpringTxXMLElement;
+import com.github.fartherp.javaxml.Document;
 
 import java.util.ArrayList;
 import java.util.List;

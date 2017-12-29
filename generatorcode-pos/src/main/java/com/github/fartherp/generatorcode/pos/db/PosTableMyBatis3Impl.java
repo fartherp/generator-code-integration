@@ -8,7 +8,6 @@ import com.github.fartherp.codegenerator.api.file.GeneratedJavaFile;
 import com.github.fartherp.codegenerator.api.file.GeneratedXmlFile;
 import com.github.fartherp.codegenerator.config.CodeGenContext;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
-import com.github.fartherp.codegenerator.xml.Document;
 import com.github.fartherp.codegenerator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
 import com.github.fartherp.codegenerator.xml.mybatis.mapper.EmptyXMLMapperGenerator;
 import com.github.fartherp.framework.common.constant.Constant;
@@ -16,6 +15,7 @@ import com.github.fartherp.generatorcode.pos.comment.PPmsCommentGenerator;
 import com.github.fartherp.generatorcode.pos.java.file.PosJavaGenerator;
 import com.github.fartherp.generatorcode.pos.xml.mybatis.mapper.PosBaseXMLMapperGenerator;
 import com.github.fartherp.javacode.CompilationUnit;
+import com.github.fartherp.javaxml.Document;
 
 import java.util.List;
 
