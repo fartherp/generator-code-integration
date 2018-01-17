@@ -43,6 +43,7 @@ public class FrameWorkTableMyBatis3Impl extends TableInfoWrapper<FrameworkAttrib
         FrameworkAttributes frameworkAttributes = this.attributes;
         // bo扩展类
         Document document = xmlMapperGenerator.getDocument();
+        document.setModule("dao");
         GeneratedXmlFile gxf = new GeneratedXmlFile(document,
                 frameworkAttributes.getMyBatis3XmlMapperFileName(),
                 frameworkAttributes.getXMLMapperPackage(),
@@ -50,6 +51,7 @@ public class FrameWorkTableMyBatis3Impl extends TableInfoWrapper<FrameworkAttrib
         answer.add(gxf);
         // bo基础类
         Document baseDocument = baseXmlMapperGenerator.getDocument();
+        baseDocument.setModule("dao");
         GeneratedXmlFile base = new GeneratedXmlFile(baseDocument,
                 frameworkAttributes.getMyBatis3XmlMapperBaseFileName(),
                 frameworkAttributes.getXMLMapperPackage(),

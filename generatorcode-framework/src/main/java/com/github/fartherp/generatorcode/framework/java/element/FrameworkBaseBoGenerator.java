@@ -37,6 +37,8 @@ public class FrameworkBaseBoGenerator extends AbstractJavaElementGenerator<Frame
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("bean");
+
         topLevelClass.setAbstract(true);
 
         List<ColumnInfo> columnInfos = getColumnsInThisClass();

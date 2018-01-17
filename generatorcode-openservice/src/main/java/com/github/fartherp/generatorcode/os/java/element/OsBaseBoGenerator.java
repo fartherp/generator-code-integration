@@ -32,6 +32,8 @@ public class OsBaseBoGenerator extends AbstractJavaElementGenerator<OsAttributes
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("pojo");
+
         List<ColumnInfo> columnInfos = getColumnsInThisClass();
         List<ColumnInfo> columnInfoList = tableInfoWrapper.getPrimaryKeyColumns();
 

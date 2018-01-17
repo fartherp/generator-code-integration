@@ -25,6 +25,6 @@ public class FrameworkExtendsBoGenerator extends AbstractJavaElementGenerator<Fr
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
-
+        topLevelClass.setModule("bean");
     }
 }

@@ -26,7 +26,7 @@
     <description>generator-code-integration</description>
 
     <properties>
-        <code-generator-core.version>1.0.1</code-generator-core.version>
+        <code-generator-core.version>1.0.2</code-generator-core.version>
         <farmework-version>1.0.9</farmework-version>
         <encoding.charset>UTF-8</encoding.charset>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

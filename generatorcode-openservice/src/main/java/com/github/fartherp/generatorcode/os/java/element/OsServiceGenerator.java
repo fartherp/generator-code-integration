@@ -26,6 +26,7 @@ public class OsServiceGenerator extends AbstractJavaElementGenerator<OsAttribute
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("manager");
         topLevelClass.setInterface(true);
         JavaTypeInfo bo = attributes.getBo();
         topLevelClass.addImportedType(bo);

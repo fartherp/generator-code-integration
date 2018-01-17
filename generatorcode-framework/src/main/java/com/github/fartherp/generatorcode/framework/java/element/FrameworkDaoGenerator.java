@@ -26,6 +26,8 @@ public class FrameworkDaoGenerator extends AbstractJavaElementGenerator<Framewor
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("dao");
+
         topLevelClass.setInterface(true);
         topLevelClass.addImportedType(attributes.getBo());
 

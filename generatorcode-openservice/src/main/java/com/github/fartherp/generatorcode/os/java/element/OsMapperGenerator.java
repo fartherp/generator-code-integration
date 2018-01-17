@@ -26,6 +26,8 @@ public class OsMapperGenerator extends AbstractJavaElementGenerator<OsAttributes
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("dao");
+
         topLevelClass.setInterface(true);
         JavaTypeInfo bo = attributes.getBo();
         topLevelClass.addImportedType(bo);

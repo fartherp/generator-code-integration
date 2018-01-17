@@ -36,6 +36,7 @@ public class OsTableMyBatis3Impl extends TableInfoWrapper<OsAttributes> {
         OsAttributes pmsAttributes = this.attributes;
         // bo扩展类
         Document document = xmlMapperGenerator.getDocument();
+        document.setModule("dao");
         GeneratedXmlFile gxf = new GeneratedXmlFile(document,
                 pmsAttributes.getMyBatis3XmlMapperFileName(),
                 pmsAttributes.getXMLMapperPackage(),

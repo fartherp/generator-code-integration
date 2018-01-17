@@ -36,6 +36,8 @@ public class FrameworkDaoImplGenerator extends AbstractJavaElementGenerator<Fram
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("dao");
+
         topLevelClass.addImportedType(attributes.getBo());
 
         JavaTypeInfo dao = attributes.getDao();

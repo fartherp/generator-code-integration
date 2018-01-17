@@ -45,6 +45,7 @@ public class FrameworkServiceImplGenerator extends AbstractJavaElementGenerator<
 //            /** 事务注解@Transactional */
 //            topLevelClass.addAnnotation("@Transactional");
 //        }
+        topLevelClass.setModule("service");
 
         JavaTypeInfo bo = attributes.getBo();
         topLevelClass.addImportedType(bo);

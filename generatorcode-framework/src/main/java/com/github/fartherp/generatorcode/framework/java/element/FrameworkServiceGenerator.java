@@ -26,6 +26,8 @@ public class FrameworkServiceGenerator extends AbstractJavaElementGenerator<Fram
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("service");
+
         topLevelClass.setInterface(true);
         topLevelClass.addImportedType(attributes.getBo());
 
