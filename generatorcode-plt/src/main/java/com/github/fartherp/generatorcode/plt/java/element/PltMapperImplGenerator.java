@@ -32,6 +32,8 @@ public class PltMapperImplGenerator extends AbstractJavaElementGenerator<PltAttr
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("dao");
+
         JavaTypeInfo bo = attributes.getBo();
         JavaTypeInfo dao = attributes.getDao();
         topLevelClass.addImportedType(bo);

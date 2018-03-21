@@ -32,6 +32,8 @@ public class PltBaseBoGenerator extends AbstractJavaElementGenerator<PltAttribut
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("pojo");
+
         List<ColumnInfo> columnInfos = getColumnsInThisClass();
 
         for (ColumnInfo columnInfo : columnInfos) {

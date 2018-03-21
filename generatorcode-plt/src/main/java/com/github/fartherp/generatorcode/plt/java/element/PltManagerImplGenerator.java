@@ -35,6 +35,8 @@ public class PltManagerImplGenerator extends AbstractJavaElementGenerator<PltAtt
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
+        topLevelClass.setModule("manager");
+
         JavaTypeInfo bo = attributes.getBo();
         topLevelClass.addImportedType(bo);
 
