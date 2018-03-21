@@ -98,7 +98,7 @@ public class PltAttributes extends AbstractAttributes {
     }
 
     public void setDaoPackage() {
-        this.daoPackage = baseRecord + ".dao.mapper" + tableInfo.getDomainObjectName() + "Mapper";
+        this.daoPackage = baseRecord + ".dao.mapper." + tableInfo.getDomainObjectName() + "Mapper";
     }
 
     public void setDaoImplPackage() {
