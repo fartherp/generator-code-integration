@@ -98,19 +98,19 @@ public class PltAttributes extends AbstractAttributes {
     }
 
     public void setDaoPackage() {
-        this.daoPackage = baseRecord + ".dao." + tableInfo.getDomainObjectName() + "Mapper";
+        this.daoPackage = baseRecord + ".dao.mapper" + tableInfo.getDomainObjectName() + "Mapper";
     }
 
     public void setDaoImplPackage() {
-        this.daoImplPackage = baseRecord + ".dao.impl." + tableInfo.getDomainObjectName() + "MapperImpl";
+        this.daoImplPackage = baseRecord + ".dao.mapper.impl." + tableInfo.getDomainObjectName() + "MapperImpl";
     }
 
     public void setServicePackage() {
-        this.servicePackage = baseRecord + ".service." + tableInfo.getDomainObjectName() + "Manager";
+        this.servicePackage = baseRecord + ".manager." + tableInfo.getDomainObjectName() + "Manager";
     }
 
     public void setServiceImplPackage() {
-        this.serviceImplPackage = baseRecord + ".service.impl." + tableInfo.getDomainObjectName() + "ManagerImpl";
+        this.serviceImplPackage = baseRecord + ".manager.impl." + tableInfo.getDomainObjectName() + "ManagerImpl";
     }
 
     public void setBaseRecord(String baseRecord) {
