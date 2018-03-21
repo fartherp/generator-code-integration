@@ -36,6 +36,7 @@ public class PltTableMyBatis3Impl extends TableInfoWrapper<PltAttributes> {
         PltAttributes pmsAttributes = this.attributes;
         // bo扩展类
         Document document = xmlMapperGenerator.getDocument();
+        document.setModule("dao");
         GeneratedXmlFile gxf = new GeneratedXmlFile(document,
                 pmsAttributes.getMyBatis3XmlMapperFileName(),
                 pmsAttributes.getXMLMapperPackage(),
