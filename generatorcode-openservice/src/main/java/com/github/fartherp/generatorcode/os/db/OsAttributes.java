@@ -45,6 +45,8 @@ public class OsAttributes extends AbstractAttributes {
 
     private String XmlMapperFileName;
 
+    private String XmlMapperBaseFileName;
+
     private String pk;
 
     public void calculateModelAttributes() {
@@ -78,6 +80,8 @@ public class OsAttributes extends AbstractAttributes {
     public void calculateXmlAttributes() {
         // 计算生成UserMapper.xml文件名
         String fileXMLMapperName = calculateMyBatis3XmlMapperFileName();
+        // 计算生成BaseUserMapper.xml文件名
+        setMyBatis3XmlMapperBaseFileName("Base" + fileXMLMapperName);
         setMyBatis3XmlMapperFileName(fileXMLMapperName);
     }
 
@@ -123,6 +127,14 @@ public class OsAttributes extends AbstractAttributes {
 
     public String getMyBatis3XmlMapperFileName() {
         return XmlMapperFileName;
+    }
+
+    public void setMyBatis3XmlMapperBaseFileName(String baseMybatis3XmlMapperFileName) {
+        this.XmlMapperBaseFileName = baseMybatis3XmlMapperFileName;
+    }
+
+    public String getMyBatis3XmlMapperBaseFileName() {
+        return this.XmlMapperBaseFileName;
     }
 
     public void setBo() {

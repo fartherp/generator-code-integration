@@ -8,6 +8,8 @@ import com.github.fartherp.codegenerator.api.file.GeneratedJavaFile;
 import com.github.fartherp.codegenerator.api.file.GeneratedXmlFile;
 import com.github.fartherp.codegenerator.config.CodeGenContext;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
+import com.github.fartherp.codegenerator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
+import com.github.fartherp.codegenerator.xml.mybatis.mapper.EmptyXMLMapperGenerator;
 import com.github.fartherp.framework.common.constant.Constant;
 import com.github.fartherp.generatorcode.plt.comment.PltCommentGenerator;
 import com.github.fartherp.generatorcode.plt.java.file.PltJavaGenerator;
@@ -23,10 +25,15 @@ import java.util.List;
  * Date: 2016/7/10
  */
 public class PltTableMyBatis3Impl extends TableInfoWrapper<PltAttributes> {
+    /** base XML内容生成类 */
+    protected AbstractXmlMapperGenerator baseXmlMapperGenerator;
+
     public PltTableMyBatis3Impl(CodeGenContext context) {
         super(context);
-        this.xmlMapperGenerator = new PltBaseXMLMapperGenerator();
+        this.xmlMapperGenerator = new EmptyXMLMapperGenerator<PltAttributes>();
         this.xmlMapperGenerator.setTableInfoWrapper(this);
+        this.baseXmlMapperGenerator = new PltBaseXMLMapperGenerator();
+        this.baseXmlMapperGenerator.setTableInfoWrapper(this);
         this.javaModelGenerators = new PltJavaGenerator(this);
         this.commentGenerator = new PltCommentGenerator();
         this.attributes = new PltAttributes();
@@ -42,6 +49,15 @@ public class PltTableMyBatis3Impl extends TableInfoWrapper<PltAttributes> {
                 pmsAttributes.getXMLMapperPackage(),
                 context.getTargetPackage(), context.getXmlFormatter());
         answer.add(gxf);
+
+        // bo基础类
+        Document baseDocument = baseXmlMapperGenerator.getDocument();
+        baseDocument.setModule("dao");
+        GeneratedXmlFile base = new GeneratedXmlFile(baseDocument,
+                pmsAttributes.getMyBatis3XmlMapperBaseFileName(),
+                pmsAttributes.getXMLMapperPackage(),
+                context.getTargetPackage(), context.getXmlFormatter());
+        answer.add(base);
     }
 
     public void getGeneratedJavaFiles(List<GeneratedJavaFile> answer, List<CompilationUnit> compilationUnits) {

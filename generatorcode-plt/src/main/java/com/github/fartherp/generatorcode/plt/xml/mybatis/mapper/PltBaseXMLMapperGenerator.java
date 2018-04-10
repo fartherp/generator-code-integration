@@ -7,6 +7,7 @@ package com.github.fartherp.generatorcode.plt.xml.mybatis.mapper;
 import com.github.fartherp.codegenerator.xml.mybatis.element.AbstractXmlElementGenerator;
 import com.github.fartherp.codegenerator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
 import com.github.fartherp.generatorcode.plt.db.PltAttributes;
+import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltInsertBatchElementGenerator;
 import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltBaseColumnListElementGenerator;
 import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltDeleteElementGenerator;
 import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltInsertElementGenerator;
@@ -14,7 +15,8 @@ import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltInsertSelect
 import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltResultMapWithoutBLOBsElementGenerator;
 import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltSelectByPrimaryKeyElementGenerator;
 import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltUpdateByPrimaryKeySelectiveElementGenerator;
-import com.github.fartherp.generatorcode.plt.xml.mybatis.element.UpdateByPrimaryKeyElementGenerator;
+import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltSelectAllByElementGenerator;
+import com.github.fartherp.generatorcode.plt.xml.mybatis.element.PltUpdateByPrimaryKeyElementGenerator;
 import com.github.fartherp.javaxml.XmlElement;
 
 /**
@@ -35,6 +37,9 @@ public class PltBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PltAtt
 
         addPltInsertElement(answer);
 
+        // insertBatch
+        addInsertBatchElement(answer);
+
         addPltInsertSelectiveElement(answer);
 
         addPltUpdateElement(answer);
@@ -42,6 +47,9 @@ public class PltBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PltAtt
         addPltUpdateSelectiveElement(answer);
 
         addPltDeleteElement(answer);
+
+        // selectAll
+        addSelectAllByElement(answer);
 
         addPltSelectByPrimaryKeyElement(answer);
     }
@@ -76,7 +84,7 @@ public class PltBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PltAtt
 
     protected void addPltUpdateElement(XmlElement parentElement) {
         if (rules.generateUpdateByPrimaryKeySelective()) {
-            AbstractXmlElementGenerator<PltAttributes> elementGenerator = new UpdateByPrimaryKeyElementGenerator();
+            AbstractXmlElementGenerator<PltAttributes> elementGenerator = new PltUpdateByPrimaryKeyElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
@@ -98,6 +106,20 @@ public class PltBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PltAtt
     protected void addPltSelectByPrimaryKeyElement(XmlElement parentElement) {
         if (rules.generateDeleteByPrimaryKey()) {
             AbstractXmlElementGenerator<PltAttributes> elementGenerator = new PltSelectByPrimaryKeyElementGenerator();
+            initializeAndExecuteGenerator(elementGenerator, parentElement);
+        }
+    }
+
+    protected void addSelectAllByElement(XmlElement parentElement) {
+        if (rules.generateSelectAllByExample()) {
+            AbstractXmlElementGenerator<PltAttributes> elementGenerator = new PltSelectAllByElementGenerator();
+            initializeAndExecuteGenerator(elementGenerator, parentElement);
+        }
+    }
+
+    protected void addInsertBatchElement(XmlElement parentElement) {
+        if (rules.generateInsertBatch()) {
+            AbstractXmlElementGenerator<PltAttributes> elementGenerator = new PltInsertBatchElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }

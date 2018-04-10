@@ -7,12 +7,14 @@ package com.github.fartherp.generatorcode.os.xml.mybatis.mapper;
 import com.github.fartherp.codegenerator.xml.mybatis.element.AbstractXmlElementGenerator;
 import com.github.fartherp.codegenerator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
 import com.github.fartherp.generatorcode.os.db.OsAttributes;
+import com.github.fartherp.generatorcode.os.xml.mybatis.element.OsInsertBatchElementGenerator;
 import com.github.fartherp.generatorcode.os.xml.mybatis.element.OsDeleteElementGenerator;
 import com.github.fartherp.generatorcode.os.xml.mybatis.element.OsInsertElementGenerator;
 import com.github.fartherp.generatorcode.os.xml.mybatis.element.OsInsertSelectiveElementGenerator;
 import com.github.fartherp.generatorcode.os.xml.mybatis.element.OsSelectByPrimaryKeyElementGenerator;
 import com.github.fartherp.generatorcode.os.xml.mybatis.element.OsUpdateByPrimaryKeyElementGenerator;
 import com.github.fartherp.generatorcode.os.xml.mybatis.element.OsUpdateByPrimaryKeySelectiveElementGenerator;
+import com.github.fartherp.generatorcode.os.xml.mybatis.element.OsSelectAllByElementGenerator;
 import com.github.fartherp.javaxml.XmlElement;
 
 /**
@@ -33,6 +35,9 @@ public class OsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<OsAttri
 
         addOsInsertElement(answer);
 
+        // insertBatch
+        addInsertBatchElement(answer);
+
         addOsInsertSelectiveElement(answer);
 
         addOsUpdateElement(answer);
@@ -41,6 +46,8 @@ public class OsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<OsAttri
 
         addOsDeleteElement(answer);
 
+        // selectAll
+        addSelectAllByElement(answer);
         addOsSelectByPrimaryKeyElement(answer);
     }
 
@@ -82,6 +89,20 @@ public class OsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<OsAttri
     protected void addOsSelectByPrimaryKeyElement(XmlElement parentElement) {
         if (rules.generateDeleteByPrimaryKey()) {
             AbstractXmlElementGenerator<OsAttributes> elementGenerator = new OsSelectByPrimaryKeyElementGenerator();
+            initializeAndExecuteGenerator(elementGenerator, parentElement);
+        }
+    }
+
+    protected void addSelectAllByElement(XmlElement parentElement) {
+        if (rules.generateSelectAllByExample()) {
+            AbstractXmlElementGenerator<OsAttributes> elementGenerator = new OsSelectAllByElementGenerator();
+            initializeAndExecuteGenerator(elementGenerator, parentElement);
+        }
+    }
+
+    protected void addInsertBatchElement(XmlElement parentElement) {
+        if (rules.generateInsertBatch()) {
+            AbstractXmlElementGenerator<OsAttributes> elementGenerator = new OsInsertBatchElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }

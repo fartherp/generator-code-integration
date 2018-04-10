@@ -18,9 +18,9 @@ import java.util.Iterator;
  * Author: CK
  * Date: 2015/6/7
  */
-public class UpdateByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<PltAttributes> {
+public class PltUpdateByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<PltAttributes> {
 
-    public UpdateByPrimaryKeyElementGenerator() {
+    public PltUpdateByPrimaryKeyElementGenerator() {
         super();
     }
 
