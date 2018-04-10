@@ -21,9 +21,9 @@ public class PltSelectAllByElementGenerator extends AbstractXmlElementGenerator<
         name = "select";
         id = attributes.getDao().getShortName() + "_" + attributes.getSelectAll();
         if (rules.generateResultMapWithBLOBs()) {
-            resultMap = attributes.getResultMapWithBLOBs();
+            resultMap = attributes.getDao().getShortName() + "_" + attributes.getResultMapWithBLOBs();
         } else {
-            resultMap = attributes.getBaseResultMap();
+            resultMap = attributes.getDao().getShortName() + "_" + attributes.getBaseResultMap();
         }
         parameterType = "java.util.Map";
     }
