@@ -9,8 +9,6 @@ import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerat
 import com.github.fartherp.codegenerator.java.file.AbstractJavaGenerator;
 import com.github.fartherp.generatorcode.framework.db.FrameworkAttributes;
 import com.github.fartherp.generatorcode.framework.java.element.FrameworkBaseBoGenerator;
-import com.github.fartherp.generatorcode.framework.java.element.FrameworkDaoGenerator;
-import com.github.fartherp.generatorcode.framework.java.element.FrameworkDaoImplGenerator;
 import com.github.fartherp.generatorcode.framework.java.element.FrameworkExtendsBoGenerator;
 import com.github.fartherp.generatorcode.framework.java.element.FrameworkMapperGenerator;
 import com.github.fartherp.generatorcode.framework.java.element.FrameworkServiceGenerator;
@@ -38,12 +36,6 @@ public class FrameworkJavaGenerator extends AbstractJavaGenerator<FrameworkAttri
 
         AbstractJavaElementGenerator<FrameworkAttributes> mapper = new FrameworkMapperGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(mapper, answers);
-
-        AbstractJavaElementGenerator<FrameworkAttributes> dao = new FrameworkDaoGenerator(tableInfoWrapper);
-        initializeAndExecuteGenerator(dao, answers);
-
-        AbstractJavaElementGenerator<FrameworkAttributes> daoImpl = new FrameworkDaoImplGenerator(tableInfoWrapper);
-        initializeAndExecuteGenerator(daoImpl, answers);
 
         AbstractJavaElementGenerator<FrameworkAttributes> service = new FrameworkServiceGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(service, answers);

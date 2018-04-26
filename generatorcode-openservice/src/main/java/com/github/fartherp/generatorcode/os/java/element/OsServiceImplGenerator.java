@@ -8,6 +8,8 @@ import com.github.fartherp.codegenerator.db.TableInfoWrapper;
 import com.github.fartherp.codegenerator.java.JavaTypeInfoEnum;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.util.JavaBeansUtils;
+import com.github.fartherp.framework.database.dao.DaoMapper;
+import com.github.fartherp.framework.database.service.impl.GenericSqlMapServiceImpl;
 import com.github.fartherp.generatorcode.os.db.OsAttributes;
 import com.github.fartherp.javacode.Field;
 import com.github.fartherp.javacode.JavaKeywords;
@@ -29,7 +31,7 @@ public class OsServiceImplGenerator extends AbstractJavaElementGenerator<OsAttri
 
     public void prepareElement() {
         javaTypeInfo = attributes.getServiceImpl();
-        superClass = new JavaTypeInfo("com.juzix.juice.developer.manager.impl.GenericManagerImpl" + attributes.getPk());
+        superClass = new JavaTypeInfo(GenericSqlMapServiceImpl.class.getName() + attributes.getPk());
         superInterfaces = new HashSet<JavaTypeInfo>();
         superInterfaces.add(attributes.getService());
     }
@@ -53,7 +55,7 @@ public class OsServiceImplGenerator extends AbstractJavaElementGenerator<OsAttri
         topLevelClass.addImportedType(JavaTypeInfoEnum.RESOURCE.getJavaTypeInfo());
         topLevelClass.addImportedType(mapper);
 
-        JavaTypeInfo baseMapper = new JavaTypeInfo("com.juzix.juice.developer.dao.DaoMapper" + attributes.getPk());
+        JavaTypeInfo baseMapper = new JavaTypeInfo(DaoMapper.class.getName() + attributes.getPk());
         topLevelClass.addImportedType(baseMapper);
 
         Method getDaoMapper = new Method("getDao");

@@ -6,6 +6,7 @@ package com.github.fartherp.generatorcode.os.java.element;
 
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
+import com.github.fartherp.framework.database.service.GenericService;
 import com.github.fartherp.generatorcode.os.db.OsAttributes;
 import com.github.fartherp.javacode.JavaTypeInfo;
 import com.github.fartherp.javacode.TopLevelClass;
@@ -22,7 +23,7 @@ public class OsServiceGenerator extends AbstractJavaElementGenerator<OsAttribute
 
     public void prepareElement() {
         javaTypeInfo = attributes.getService();
-        superClass = new JavaTypeInfo("com.juzix.juice.developer.manager.GenericManager" + attributes.getPk());
+        superClass = new JavaTypeInfo(GenericService.class.getName() + attributes.getPk());
     }
 
     public void dealElement(TopLevelClass topLevelClass) {

@@ -8,6 +8,8 @@ import com.github.fartherp.codegenerator.db.ColumnInfo;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.util.JavaBeansUtils;
+import com.github.fartherp.framework.database.dao.FieldAccessVo;
+import com.github.fartherp.framework.database.dao.annotation.Id;
 import com.github.fartherp.generatorcode.os.db.OsAttributes;
 import com.github.fartherp.javacode.Field;
 import com.github.fartherp.javacode.JavaTypeInfo;
@@ -27,12 +29,13 @@ public class OsBaseBoGenerator extends AbstractJavaElementGenerator<OsAttributes
     }
 
     public void prepareElement() {
-        javaTypeInfo = attributes.getBo();
-        superClass = new JavaTypeInfo("com.juzix.juice.developer.pojo.FieldAccessVo");
+        javaTypeInfo = attributes.getBaseBo();
+        superClass = new JavaTypeInfo(FieldAccessVo.class.getName());
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
         topLevelClass.setModule("pojo");
+        topLevelClass.addImportedType(Id.class.getName());
 
         List<ColumnInfo> columnInfos = getColumnsInThisClass();
         List<ColumnInfo> columnInfoList = tableInfoWrapper.getPrimaryKeyColumns();

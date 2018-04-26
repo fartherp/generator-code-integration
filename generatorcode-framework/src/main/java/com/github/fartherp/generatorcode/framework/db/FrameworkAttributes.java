@@ -7,11 +7,9 @@ package com.github.fartherp.generatorcode.framework.db;
 import com.github.fartherp.codegenerator.db.AbstractAttributes;
 import com.github.fartherp.codegenerator.db.ColumnInfo;
 import com.github.fartherp.codegenerator.util.JavaBeansUtils;
-import com.github.fartherp.framework.core.dao.ConfigurableBaseSqlMapDao;
-import com.github.fartherp.framework.core.dao.DaoMapper;
-import com.github.fartherp.framework.core.dao.SqlMapDao;
-import com.github.fartherp.framework.core.service.GenericService;
-import com.github.fartherp.framework.core.service.GenericSqlMapServiceImpl;
+import com.github.fartherp.framework.database.dao.DaoMapper;
+import com.github.fartherp.framework.database.service.GenericService;
+import com.github.fartherp.framework.database.service.impl.GenericSqlMapServiceImpl;
 import com.github.fartherp.javacode.Field;
 import com.github.fartherp.javacode.JavaTypeInfo;
 
@@ -32,14 +30,6 @@ public class FrameworkAttributes extends AbstractAttributes {
 
     private JavaTypeInfo mapper;
 
-    private JavaTypeInfo dao;
-
-    private JavaTypeInfo sqlMapDao;
-
-    private JavaTypeInfo daoImpl;
-
-    private JavaTypeInfo configurableBaseSqlMapDao;
-
     private JavaTypeInfo service;
 
     private JavaTypeInfo genericService;
@@ -59,10 +49,6 @@ public class FrameworkAttributes extends AbstractAttributes {
     private String XMLMapperPackage;
 
     private String mapperPackage;
-
-    private String daoPackage;
-
-    private String daoImplPackage;
 
     private String servicePackage;
 
@@ -93,8 +79,6 @@ public class FrameworkAttributes extends AbstractAttributes {
         setBeanPackage();
         // 计算cn.vansky.code.user.dao.UserMapper命名空间
         setMapperPackage();
-        setDaoPackage();
-        setDaoImplPackage();
         setServicePackage();
         setServiceImplPackage();
         setControllerPackage();
@@ -104,10 +88,6 @@ public class FrameworkAttributes extends AbstractAttributes {
         setPk();
         setDaoMapper();
         setMapper();
-        setSqlMapDao();
-        setDao();
-        setConfigurableBaseSqlMapDao();
-        setDaoImpl();
         setGenericService();
         setService();
         setGenericSqlMapServiceImpl();
@@ -196,14 +176,6 @@ public class FrameworkAttributes extends AbstractAttributes {
         return this.mapperPackage;
     }
 
-    public void setDaoPackage() {
-        this.daoPackage = baseRecord + ".dao." + tableInfo.getDomainObjectName() + "Dao";
-    }
-
-    public void setDaoImplPackage() {
-        this.daoImplPackage = baseRecord + ".dao.impl." + tableInfo.getDomainObjectName() + "DaoImpl";
-    }
-
     public void setServicePackage() {
         this.servicePackage = baseRecord + ".service." + tableInfo.getDomainObjectName() + "Service";
     }
@@ -240,22 +212,6 @@ public class FrameworkAttributes extends AbstractAttributes {
         this.mapper = new JavaTypeInfo(mapperPackage);
     }
 
-    public void setDao() {
-        this.dao = new JavaTypeInfo(daoPackage);
-    }
-
-    public void setSqlMapDao() {
-        this.sqlMapDao = new JavaTypeInfo(SqlMapDao.class.getName() + getPk());
-    }
-
-    public void setDaoImpl() {
-        this.daoImpl = new JavaTypeInfo(daoImplPackage);
-    }
-
-    public void setConfigurableBaseSqlMapDao() {
-        this.configurableBaseSqlMapDao = new JavaTypeInfo(ConfigurableBaseSqlMapDao.class.getName() + getPk());
-    }
-
     public void setGenericService() {
         this.genericService = new JavaTypeInfo(GenericService.class.getName() + getPk());
     }
@@ -290,22 +246,6 @@ public class FrameworkAttributes extends AbstractAttributes {
 
     public JavaTypeInfo getMapper() {
         return mapper;
-    }
-
-    public JavaTypeInfo getDao() {
-        return dao;
-    }
-
-    public JavaTypeInfo getSqlMapDao() {
-        return sqlMapDao;
-    }
-
-    public JavaTypeInfo getDaoImpl() {
-        return daoImpl;
-    }
-
-    public JavaTypeInfo getConfigurableBaseSqlMapDao() {
-        return configurableBaseSqlMapDao;
     }
 
     public JavaTypeInfo getService() {

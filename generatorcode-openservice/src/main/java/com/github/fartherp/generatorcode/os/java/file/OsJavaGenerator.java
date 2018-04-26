@@ -9,6 +9,7 @@ import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerat
 import com.github.fartherp.codegenerator.java.file.AbstractJavaGenerator;
 import com.github.fartherp.generatorcode.os.db.OsAttributes;
 import com.github.fartherp.generatorcode.os.java.element.OsBaseBoGenerator;
+import com.github.fartherp.generatorcode.os.java.element.OsExtendsBoGenerator;
 import com.github.fartherp.generatorcode.os.java.element.OsMapperGenerator;
 import com.github.fartherp.generatorcode.os.java.element.OsServiceGenerator;
 import com.github.fartherp.generatorcode.os.java.element.OsServiceImplGenerator;
@@ -27,7 +28,10 @@ public class OsJavaGenerator extends AbstractJavaGenerator<OsAttributes> {
     }
 
     public void getJavaFile(List<CompilationUnit> answers) {
-        AbstractJavaElementGenerator<OsAttributes> extendBo = new OsBaseBoGenerator(tableInfoWrapper);
+        AbstractJavaElementGenerator<OsAttributes> bo = new OsBaseBoGenerator(tableInfoWrapper);
+        initializeAndExecuteGenerator(bo, answers);
+
+        AbstractJavaElementGenerator<OsAttributes> extendBo = new OsExtendsBoGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(extendBo, answers);
 
         AbstractJavaElementGenerator<OsAttributes> mapper = new OsMapperGenerator(tableInfoWrapper);

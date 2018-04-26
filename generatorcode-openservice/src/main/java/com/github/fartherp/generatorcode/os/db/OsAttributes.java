@@ -19,6 +19,8 @@ import java.util.List;
  */
 public class OsAttributes extends AbstractAttributes {
 
+    private JavaTypeInfo baseBo;
+
     private JavaTypeInfo bo;
 
     private JavaTypeInfo dao;
@@ -30,6 +32,8 @@ public class OsAttributes extends AbstractAttributes {
     private JavaTypeInfo serviceImpl;
 
     private String baseRecord;
+
+    private String baseBeanPackage;
 
     private String beanPackage;
 
@@ -56,12 +60,14 @@ public class OsAttributes extends AbstractAttributes {
 
         setXMLMapperPackage();
 
+        setBaseBeanPackage();
         setBeanPackage();
         setDaoPackage();
         setDaoImplPackage();
         setServicePackage();
         setServiceImplPackage();
 
+        setBaseBo();
         setBo();
         setPk();
         setDao();
@@ -95,6 +101,10 @@ public class OsAttributes extends AbstractAttributes {
 
     public String getNamespace() {
         return baseRecord + ".dao." + tableInfo.getDomainObjectName() + "Mapper";
+    }
+
+    public void setBaseBeanPackage() {
+        this.baseBeanPackage = baseRecord + ".pojo." + tableInfo.getDomainObjectName() + "Base";
     }
 
     public void setBeanPackage() {
@@ -137,6 +147,10 @@ public class OsAttributes extends AbstractAttributes {
         return this.XmlMapperBaseFileName;
     }
 
+    public void setBaseBo() {
+        this.baseBo = new JavaTypeInfo(baseBeanPackage);
+    }
+
     public void setBo() {
         this.bo = new JavaTypeInfo(beanPackage);
     }
@@ -155,6 +169,10 @@ public class OsAttributes extends AbstractAttributes {
 
     public void setServiceImpl() {
         this.serviceImpl = new JavaTypeInfo(serviceImplPackage);
+    }
+
+    public JavaTypeInfo getBaseBo() {
+        return baseBo;
     }
 
     public JavaTypeInfo getBo() {

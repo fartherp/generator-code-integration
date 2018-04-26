@@ -8,8 +8,8 @@ import com.github.fartherp.codegenerator.db.ColumnInfo;
 import com.github.fartherp.codegenerator.db.TableInfoWrapper;
 import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerator;
 import com.github.fartherp.codegenerator.util.JavaBeansUtils;
-import com.github.fartherp.framework.core.dao.annotation.ColumnDescription;
-import com.github.fartherp.framework.core.dao.annotation.Id;
+import com.github.fartherp.framework.database.dao.annotation.ColumnDescription;
+import com.github.fartherp.framework.database.dao.annotation.Id;
 import com.github.fartherp.generatorcode.framework.db.FrameworkAttributes;
 import com.github.fartherp.javacode.Field;
 import com.github.fartherp.javacode.JavaTypeInfo;
@@ -33,7 +33,6 @@ public class FrameworkBaseBoGenerator extends AbstractJavaElementGenerator<Frame
         javaTypeInfo = attributes.getBaseBo();
         superClass = FrameworkJavaTypeInfoEnum.FIELD_ACCESS_VO.getJavaTypeInfo();
         superInterfaces = new HashSet<JavaTypeInfo>();
-        superInterfaces.add(FrameworkJavaTypeInfoEnum.TABLE_DATA_CONVERTABLE.getJavaTypeInfo());
     }
 
     public void dealElement(TopLevelClass topLevelClass) {

@@ -4,12 +4,10 @@
 
 package com.github.fartherp.generatorcode.framework.java.element;
 
-import com.github.fartherp.framework.core.dao.ConfigurableBaseSqlMapDao;
-import com.github.fartherp.framework.core.dao.FieldAccessVo;
-import com.github.fartherp.framework.core.dao.TableDataConvertable;
-import com.github.fartherp.framework.core.dao.annotation.ColumnDescription;
-import com.github.fartherp.framework.core.dao.annotation.Id;
-import com.github.fartherp.framework.core.orm.mybatis.annotation.SqlMapper;
+import com.github.fartherp.framework.database.dao.FieldAccessVo;
+import com.github.fartherp.framework.database.dao.annotation.ColumnDescription;
+import com.github.fartherp.framework.database.dao.annotation.Id;
+import com.github.fartherp.framework.database.mybatis.annotation.SqlMapper;
 import com.github.fartherp.javacode.JavaTypeInfo;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,10 +34,8 @@ public enum FrameworkJavaTypeInfoEnum {
     SQL_SESSION_FACTORY(SqlSessionFactory.class.getName()),
     REPOSITORY(Repository.class.getName()),
     AUTOWIRED(Autowired.class.getName()),
-    CONFIGURABLE_BASE_SQL_MAP_DAO(ConfigurableBaseSqlMapDao.class.getName()),
     SERVICE(Service.class.getName()),
     FIELD_ACCESS_VO(FieldAccessVo.class.getName()),
-    TABLE_DATA_CONVERTABLE(TableDataConvertable.class.getName()),
     LIST(List.class.getName()),
     STRING(String.class.getName()),
     DATE(Date.class.getName()),

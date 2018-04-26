@@ -57,7 +57,7 @@ public class FrameworkServiceImplGenerator extends AbstractJavaElementGenerator<
         topLevelClass.addImportedType(JavaTypeInfoEnum.SERVICE.getJavaTypeInfo());
 
         /** 字段 */
-        JavaTypeInfo dao = attributes.getDao();
+        JavaTypeInfo dao = attributes.getMapper();
         topLevelClass.addImportedType(dao);
         String shortName = JavaBeansUtils.getValidPropertyName(dao.getShortName());
         Field field = new Field(shortName, dao);
@@ -69,7 +69,7 @@ public class FrameworkServiceImplGenerator extends AbstractJavaElementGenerator<
         Method getDao = new Method("getDao");
         getDao.setJavaScope(JavaKeywords.PUBLIC);
         getDao.addBodyLine("return " + shortName + ";");
-        JavaTypeInfo sqlMapDao = attributes.getSqlMapDao();
+        JavaTypeInfo sqlMapDao = attributes.getDaoMapper();
         getDao.setReturnType(sqlMapDao);
         topLevelClass.addMethod(getDao);
         topLevelClass.addImportedType(sqlMapDao);
