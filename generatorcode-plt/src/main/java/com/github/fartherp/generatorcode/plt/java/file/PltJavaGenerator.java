@@ -9,6 +9,11 @@ import com.github.fartherp.codegenerator.java.element.AbstractJavaElementGenerat
 import com.github.fartherp.codegenerator.java.file.AbstractJavaGenerator;
 import com.github.fartherp.generatorcode.plt.db.PltAttributes;
 import com.github.fartherp.generatorcode.plt.java.element.PltBaseBoGenerator;
+import com.github.fartherp.generatorcode.plt.java.element.PltDemoServantGenerator;
+import com.github.fartherp.generatorcode.plt.java.element.PltDemoServerGenerator;
+import com.github.fartherp.generatorcode.plt.java.element.PltDemoServiceGenerator;
+import com.github.fartherp.generatorcode.plt.java.element.PltDemoServiceImplGenerator;
+import com.github.fartherp.generatorcode.plt.java.element.PltDemoUtilsGenerator;
 import com.github.fartherp.generatorcode.plt.java.element.PltManagerGenerator;
 import com.github.fartherp.generatorcode.plt.java.element.PltManagerImplGenerator;
 import com.github.fartherp.generatorcode.plt.java.element.PltMapperGenerator;
@@ -37,10 +42,27 @@ public class PltJavaGenerator extends AbstractJavaGenerator<PltAttributes> {
         AbstractJavaElementGenerator<PltAttributes> mapperImple = new PltMapperImplGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(mapperImple, answers);
 
-        AbstractJavaElementGenerator<PltAttributes> service = new PltManagerGenerator(tableInfoWrapper);
-        initializeAndExecuteGenerator(service, answers);
+        AbstractJavaElementGenerator<PltAttributes> manager = new PltManagerGenerator(tableInfoWrapper);
+        initializeAndExecuteGenerator(manager, answers);
 
-        AbstractJavaElementGenerator<PltAttributes> serverImpl = new PltManagerImplGenerator(tableInfoWrapper);
-        initializeAndExecuteGenerator(serverImpl, answers);
+        AbstractJavaElementGenerator<PltAttributes> managerImpl = new PltManagerImplGenerator(tableInfoWrapper);
+        initializeAndExecuteGenerator(managerImpl, answers);
+
+        if (2 == context.getIfGenProject()) {
+            AbstractJavaElementGenerator<PltAttributes> servant = new PltDemoServantGenerator(tableInfoWrapper);
+            initializeAndExecuteGenerator(servant, answers);
+
+            AbstractJavaElementGenerator<PltAttributes> server = new PltDemoServerGenerator(tableInfoWrapper);
+            initializeAndExecuteGenerator(server, answers);
+
+            AbstractJavaElementGenerator<PltAttributes> service = new PltDemoServiceGenerator(tableInfoWrapper);
+            initializeAndExecuteGenerator(service, answers);
+
+            AbstractJavaElementGenerator<PltAttributes> serviceImpl = new PltDemoServiceImplGenerator(tableInfoWrapper);
+            initializeAndExecuteGenerator(serviceImpl, answers);
+
+            AbstractJavaElementGenerator<PltAttributes> utils = new PltDemoUtilsGenerator(tableInfoWrapper);
+            initializeAndExecuteGenerator(utils, answers);
+        }
     }
 }
