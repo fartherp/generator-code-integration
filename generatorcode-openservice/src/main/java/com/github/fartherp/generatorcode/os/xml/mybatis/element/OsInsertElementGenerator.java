@@ -29,14 +29,14 @@ public class OsInsertElementGenerator extends AbstractXmlElementGenerator<OsAttr
     }
 
     public void dealElements() {
-        String keyProperty;
-        if (tableInfoWrapper.getPrimaryKeyColumns().size() > 1) {
-            keyProperty = "hashmap";
-        } else {
-            keyProperty = tableInfoWrapper.getPrimaryKeyColumns().get(0).getJavaProperty();
+        List<ColumnInfo> columnInfos = tableInfoWrapper.getPrimaryKeyColumns();
+        StringBuilder keyProperty = new StringBuilder();
+        for (ColumnInfo columnInfo : columnInfos) {
+            keyProperty.append(columnInfo.getJavaProperty());
+            keyProperty.append(',');
         }
         answer.addAttribute(new Attribute("useGeneratedKeys", "true"));
-        answer.addAttribute(new Attribute("keyProperty", keyProperty));
+        answer.addAttribute(new Attribute("keyProperty", keyProperty.deleteCharAt(keyProperty.length() - 1).toString()));
 
         answer.addElement(new TextElement("<![CDATA["));
 

@@ -12,6 +12,8 @@ import com.github.fartherp.javaxml.Attribute;
 import com.github.fartherp.javaxml.TextElement;
 import com.github.fartherp.javaxml.XmlElement;
 
+import java.util.List;
+
 /**
  * 添加部分字段,if-test
  * Author: CK
@@ -26,14 +28,14 @@ public class OsInsertSelectiveElementGenerator extends AbstractXmlElementGenerat
     }
 
     public void dealElements() {
-        String keyProperty;
-        if (tableInfoWrapper.getPrimaryKeyColumns().size() > 1) {
-            keyProperty = "hashmap";
-        } else {
-            keyProperty = tableInfoWrapper.getPrimaryKeyColumns().get(0).getJavaProperty();
+        List<ColumnInfo> columnInfos = tableInfoWrapper.getPrimaryKeyColumns();
+        StringBuilder keyProperty = new StringBuilder();
+        for (ColumnInfo columnInfo : columnInfos) {
+            keyProperty.append(columnInfo.getJavaProperty());
+            keyProperty.append(',');
         }
         answer.addAttribute(new Attribute("useGeneratedKeys", "true"));
-        answer.addAttribute(new Attribute("keyProperty", keyProperty));
+        answer.addAttribute(new Attribute("keyProperty", keyProperty.deleteCharAt(keyProperty.length() - 1).toString()));
 
         StringBuilder sb = new StringBuilder();
 
