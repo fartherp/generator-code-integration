@@ -25,8 +25,7 @@
     <description>generator-code-integration</description>
 
     <properties>
-        <code-generator-core.version>1.0.4-SNAPSHOT</code-generator-core.version>
-        <farmework-version>1.2.3-SNAPSHOT</farmework-version>
+        <code-generator-core.version>1.0.4</code-generator-core.version>
         <encoding.charset>UTF-8</encoding.charset>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <profiles.dir>src/main/profiles</profiles.dir>
@@ -442,16 +441,6 @@
                 <groupId>com.github.fartherp</groupId>
                 <artifactId>code-generator-core</artifactId>
                 <version>${code-generator-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.fartherp</groupId>
-                <artifactId>framework-core</artifactId>
-                <version>${farmework-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.fartherp</groupId>
-                <artifactId>framework-compress</artifactId>
-                <version>${farmework-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
