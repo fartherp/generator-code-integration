@@ -29,7 +29,7 @@ public class PltManagerImplGenerator extends AbstractJavaElementGenerator<PltAtt
 
     public void prepareElement() {
         javaTypeInfo = attributes.getServiceImpl();
-        superClass = new JavaTypeInfo("com.juzix.plt.manager.impl.BaseManagerImpl" + attributes.getPk());
+        superClass = new JavaTypeInfo("com.judsf.frameworks.database.manager.impl.BaseManagerImpl" + attributes.getPk());
         superInterfaces = new HashSet<JavaTypeInfo>();
         superInterfaces.add(attributes.getService());
     }
@@ -54,7 +54,7 @@ public class PltManagerImplGenerator extends AbstractJavaElementGenerator<PltAtt
         topLevelClass.addImportedType(JavaTypeInfoEnum.RESOURCE.getJavaTypeInfo());
         topLevelClass.addImportedType(mapper);
 
-        JavaTypeInfo baseMapper = new JavaTypeInfo("com.juzix.plt.dao.mapper.BaseMapper" + attributes.getPk());
+        JavaTypeInfo baseMapper = new JavaTypeInfo("com.judsf.frameworks.database.dao.BaseMapper" + attributes.getPk());
         topLevelClass.addImportedType(baseMapper);
 
         Method getDaoMapper = new Method("getMapper");

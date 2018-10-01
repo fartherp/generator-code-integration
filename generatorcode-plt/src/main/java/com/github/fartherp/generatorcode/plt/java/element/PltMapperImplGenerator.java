@@ -26,7 +26,7 @@ public class PltMapperImplGenerator extends AbstractJavaElementGenerator<PltAttr
 
     public void prepareElement() {
         javaTypeInfo = attributes.getDaoImpl();
-        superClass = new JavaTypeInfo("com.juzix.plt.dao.mapper.impl.BaseMapperImpl" + attributes.getPk());
+        superClass = new JavaTypeInfo("com.judsf.frameworks.database.dao.impl.BaseMapperImpl" + attributes.getPk());
         superInterfaces = new HashSet<JavaTypeInfo>();
         superInterfaces.add(attributes.getDao());
     }

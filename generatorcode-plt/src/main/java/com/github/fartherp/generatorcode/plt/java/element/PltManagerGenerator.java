@@ -22,7 +22,7 @@ public class PltManagerGenerator extends AbstractJavaElementGenerator<PltAttribu
 
     public void prepareElement() {
         javaTypeInfo = attributes.getService();
-        superClass = new JavaTypeInfo("com.juzix.plt.manager.BaseManager" + attributes.getPk());
+        superClass = new JavaTypeInfo("com.judsf.frameworks.database.manager.BaseManager" + attributes.getPk());
     }
 
     public void dealElement(TopLevelClass topLevelClass) {

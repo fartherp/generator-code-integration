@@ -22,7 +22,7 @@ public class PltMapperGenerator extends AbstractJavaElementGenerator<PltAttribut
 
     public void prepareElement() {
         javaTypeInfo = attributes.getDao();
-        superClass = new JavaTypeInfo("com.juzix.plt.dao.mapper.BaseMapper" + attributes.getPk());
+        superClass = new JavaTypeInfo("com.judsf.frameworks.database.dao.BaseMapper" + attributes.getPk());
     }
 
     public void dealElement(TopLevelClass topLevelClass) {
